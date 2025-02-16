@@ -28,19 +28,17 @@ func newDeck(shuffle bool) deck {
 		}
 	}
 	if shuffle {
-		cards = cards.shuffleCards()
+		cards.shuffleCards()
 	}
 	return cards
 }
 
 // shuffleCards randomly reorders the cards in the deck using the math/rand package.
 // It returns a new shuffled deck while leaving the original deck unchanged.
-func (d deck) shuffleCards() deck {
-	shuffledDeck := d
-	rand.Shuffle(len(shuffledDeck), func(i, j int) {
-		shuffledDeck[i], shuffledDeck[j] = shuffledDeck[j], shuffledDeck[i]
+func (d deck) shuffleCards() {
+	rand.Shuffle(len(d), func(i, j int) {
+		d[i], d[j] = d[j], d[i]
 	})
-	return shuffledDeck
 }
 
 // print displays all cards in the deck to standard output,
