@@ -53,7 +53,7 @@ func (d deck) print() {
 // It returns two decks: the first handSize cards (the hand),
 // and the remaining cards (the rest of the deck).
 // If handSize is greater than the deck size, it will panic.
-func (d deck) deal(handSize int) (deck, deck) {
+func deal(d deck, handSize int) (deck, deck) {
 	return d[:handSize], d[handSize:]
 }
 
